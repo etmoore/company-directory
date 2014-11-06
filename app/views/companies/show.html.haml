@@ -1,0 +1,11 @@
+%h1=@company.name
+%p
+  %strong City:
+  =@company.city
+%p
+  %strong Nonprofit:
+  =@company.nonprofit
+
+=link_to "All companies", root_path
+|
+=link_to "Edit company", edit_company_path  

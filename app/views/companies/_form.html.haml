@@ -1,0 +1,12 @@
+=form_for @company, html: {role: "form"} do |f|
+
+  =f.label :name
+  =f.text_field :name
+
+  =f.label :city
+  =f.text_field :city
+
+  =f.label :nonprofit
+  =f.check_box :nonprofit
+
+  =f.submit

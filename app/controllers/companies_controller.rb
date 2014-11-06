@@ -2,6 +2,7 @@ class CompaniesController < ApplicationController
   before_action :set_company, only: [:show, :edit, :update, :destroy]
 
   def index
+    @companies = Company.all
   end
 
   def show
@@ -11,15 +12,22 @@ class CompaniesController < ApplicationController
   end
 
   def new
+    @company = Company.new
   end
 
   def update
+    @company.update(company_params)
+    redirect_to @company
   end
 
   def create
+    @company = Company.create(company_params)
+    redirect_to @company
   end
 
   def destroy
+    @company.destroy
+    redirect_to root_path
   end
 
   private
